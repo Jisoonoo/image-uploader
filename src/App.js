@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import {Card, CardHeader, CardContent, Avatar, IconButton, CardMedia} from '@mui/material/'
+import { MoreVert } from '@mui/icons-material';
+import ProfilePic from './oreki.jpg'
 
 function App() {
+
+  const date = new Date();
+  
+  console.log(date);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Card variant='outlined' className='cardBox'>
+        <CardHeader
+          avatar={
+            <Avatar sx={{backgroundColor: 'red'}} arial-label='recipe'>
+              R
+            </Avatar>
+          }
+          title='Oreki'
+          subheader='ochigdor'
+          action={
+            <IconButton>
+              <MoreVert/>
+            </IconButton>
+          }
+        />
+        <CardMedia
+          component='img'
+          image={ProfilePic}
+          alt='trash'
+        />
+        <CardContent>
+          ASd
+        </CardContent>
+      </Card>
     </div>
   );
 }
